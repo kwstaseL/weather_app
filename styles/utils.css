@@ -22,6 +22,11 @@ button {
 .section {
   margin-top: 5rem;
 }
+
+.filter-white {
+  filter: invert(100%) sepia(0%) saturate(7446%) hue-rotate(341deg)
+    brightness(110%) contrast(102%);
+}
 /* xs */
 /* If its more than 475 px keep it there */
 @media (min-width: 475px) {

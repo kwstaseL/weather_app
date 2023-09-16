@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=quicksand@600,700,400,500&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/main.js"></script>
     <title>Weather App</title>
@@ -54,10 +57,61 @@
     <main>
       <section class="hero container section">
         <img class="hero__weather-img" src="./public/assets/sun.png" alt="" />
-        <h1>Amsterdam</h1>
-        <h1>25</h1>
-        <h1>Mostly Cloudy</h1>
-        <h2>H:25 L:13</h2>
+        <h1 class="hero__weather-location">Amsterdam</h1>
+        <h1 class="hero__weather-temp">25°C</h1>
+        <h1 class="hero__weather-desc">Mostly Cloudy</h1>
+        <h2 class="hero__weather-hl">H:25°C L:13°C</h2>
+      </section>
+
+      <section class="conditions container section">
+        <h1 class="conditions__header">Conditions</h1>
+        <br />
+        <ul class="conditions__list">
+          <li>
+            <img
+              class="conditions__image filter-white"
+              src="./public/assets/thermometer.png"
+              alt=""
+            />
+            <div>
+              <h1 class="conditions__desc">Feels Like</h1>
+              <h1 class="conditions__value">30°C</h1>
+            </div>
+          </li>
+          <li>
+            <img
+              class="conditions__image filter-white"
+              src="./public/assets/wind.png"
+              alt=""
+            />
+            <div>
+              <h1 class="conditions__desc">Wind</h1>
+              <h1 class="conditions__value">0.2 km/h</h1>
+            </div>
+          </li>
+          <li>
+            <img
+              class="conditions__image filter-white"
+              src="./public/assets/drop.png"
+              alt=""
+            />
+            <div>
+              <h1 class="conditions__desc">Chance of rain</h1>
+              <h1 class="conditions__value">0%</h1>
+            </div>
+          </li>
+          <li>
+            <img
+              class="conditions__image filter-white"
+              src="./public/assets/rays.png"
+              alt=""
+            />
+            <div>
+              <h1 class="conditions__desc">UV Index</h1>
+              <h1 class="conditions__value">3</h1>
+            </div>
+          </li>
+        </ul>
       </section>
     </main>
     <footer></footer>

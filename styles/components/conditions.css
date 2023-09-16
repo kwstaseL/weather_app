@@ -1,0 +1,34 @@
+.conditions {
+  background-color: var(--clr-grey);
+  border-radius: 8px;
+  padding: 2rem;
+}
+.conditions__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.conditions__header {
+  font-size: var(--size-2xl);
+}
+
+.conditions__desc {
+  font-size: var(--size-xl);
+  color: var(--clr-darkgrey);
+}
+
+.conditions__value {
+  font-size: var(--size-2xl);
+}
+
+.conditions__image {
+  width: var(--size-2xl);
+  height: var(--size-2xl);
+}
+
+.conditions__list li {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+}
