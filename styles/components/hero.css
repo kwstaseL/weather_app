@@ -88,10 +88,9 @@
 /* xl */
 @media (min-width: 1280px) {
   .hero {
-    max-width: 70ch;
+    max-width: 65ch;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: -10rem;
   }
 
   .hero__weather-img {

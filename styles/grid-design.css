@@ -1,0 +1,42 @@
+@media (min-width: 1280px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* Conditions */
+
+  .hero {
+    margin-top: 3rem;
+  }
+
+  .conditions {
+    margin-top: 3rem;
+    grid-column: 1/2;
+  }
+
+  /* Forecast */
+  .forecast {
+    margin-top: 3rem;
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .forecast {
+    margin-right: 6rem;
+    padding: 2rem;
+    max-width: 50ch;
+    height: 700px;
+  }
+
+  .forecast__list {
+    padding: 2rem;
+  }
+
+  .forecast__list li {
+    padding: 1rem;
+    gap: 5rem;
+  }
+}

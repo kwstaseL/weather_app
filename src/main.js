@@ -4,3 +4,6 @@ import "../styles/utils.css";
 import "../styles/components/header.css";
 import "../styles/components/hero.css";
 import "../styles/components/conditions.css";
+import "../styles/components/forecast.css";
+import "../styles/common-container-sizes.css";
+import "../styles/grid-design.css";

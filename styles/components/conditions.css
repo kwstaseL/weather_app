@@ -1,6 +1,5 @@
 .conditions {
   background-color: var(--clr-grey);
-  border-radius: 8px;
   padding: 2rem;
 }
 .conditions__list {
@@ -31,4 +30,28 @@
   display: flex;
   align-items: start;
   gap: 0.5rem;
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .conditions {
+    max-width: 60ch;
+  }
+
+  .conditions__header {
+    font-size: var(--size-3xl);
+  }
+
+  .conditions__desc {
+    font-size: var(--size-2xl);
+  }
+
+  .conditions__value {
+    font-size: var(--size-3xl);
+  }
+
+  .conditions__image {
+    width: var(--size-3xl);
+    height: var(--size-3xl);
+  }
 }

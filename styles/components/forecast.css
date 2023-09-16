@@ -1,0 +1,51 @@
+.forecast {
+  background-color: var(--clr-grey);
+  padding: 2rem;
+  max-width: 50ch;
+}
+
+.forecast__list {
+  padding: 2rem;
+}
+
+.forecast__list li {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 5rem;
+  border-bottom: 1px solid var(--clr-underline);
+}
+
+.forecast__day {
+  width: 50px;
+}
+
+.forecast__weather-img {
+  height: var(--size-3xl);
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .forecast__list li {
+    gap: 7rem;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .forecast__list li {
+    gap: 12em;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .forecast__list li {
+    gap: 17rem;
+  }
+}
+
+/* xl */
+
+/* 2xl */
+/* @media (min-width: 1536px) {} */
