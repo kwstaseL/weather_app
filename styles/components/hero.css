@@ -1,0 +1,13 @@
+.hero {
+  max-width: 60ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__weather-img {
+  display: inline-block;
+  width: var(--size-10xl);
+}
