@@ -13,6 +13,7 @@
   }
 
   .conditions {
+    max-width: 65ch;
     margin-top: 3rem;
     grid-column: 1/2;
   }

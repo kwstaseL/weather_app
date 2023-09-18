@@ -21,6 +21,7 @@
   padding-bottom: 0.5rem;
   padding-right: 2rem;
   padding-left: 1rem;
+  color: var(--clr-light);
   background-color: var(--clr-grey);
 
   border: 0;
