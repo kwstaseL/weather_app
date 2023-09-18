@@ -1,44 +1,36 @@
 @media (min-width: 640px) {
-  .conditions,
-  .forecast {
+  .section {
     max-width: 60ch;
   }
 
-  .conditions__header,
-  .forecast__title {
+  .section-title {
     font-size: var(--size-3xl);
   }
 
-  .conditions__value,
-  .forecast__day {
+  .section__scale-value {
     font-size: var(--size-3xl);
   }
 
-  .conditions__image,
-  .forecast__weather-img {
+  .section-img {
     width: var(--size-3xl);
     height: var(--size-3xl);
   }
 }
 
 @media (min-width: 768px) {
-  .conditions,
-  .forecast {
+  .section {
     max-width: 75ch;
   }
 
-  .conditions__header,
-  .forecast__title {
+  .section-title {
     font-size: var(--size-4xl);
   }
 
-  .conditions__value,
-  .forecast__day {
+  .section__scale-value {
     font-size: var(--size-4xl);
   }
 
-  .conditions__image,
-  .forecast__weather-img {
+  .section-img {
     width: var(--size-4xl);
     height: var(--size-4xl);
   }
@@ -46,8 +38,7 @@
 
 /* lg */
 @media (min-width: 1024px) {
-  .conditions,
-  .forecast {
+  .section {
     max-width: 90ch;
   }
 }

@@ -48,6 +48,11 @@
   font-size: var(--size-m);
 }
 
+.header__clock {
+  margin-right: 2rem;
+  font-size: var(--size-lg);
+}
+
 /* sm */
 @media (min-width: 640px) {
   .header {
@@ -83,6 +88,9 @@
   .header__sun-icon {
     font-size: var(--size-lg);
   }
+  .header__clock {
+    font-size: var(--size-xl);
+  }
 }
 
 /* lg */
@@ -99,6 +107,10 @@
 
   .header__sun-icon {
     font-size: var(--size-xl);
+  }
+  .header__clock {
+    font-weight: lighter;
+    font-size: var(--size-2xl);
   }
 }
 

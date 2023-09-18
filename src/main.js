@@ -5,27 +5,33 @@ import "../styles/components/header.css";
 import "../styles/components/hero.css";
 import "../styles/components/conditions.css";
 import "../styles/components/forecast.css";
-import "../styles/common-container-sizes.css";
+import "../styles/components/todays_forecast.css";
+import "../styles/common-section-sizes.css";
 import "../styles/grid-design.css";
 import currentWeatherFactory from "./currentWeatherFactory";
 import DOMManager from "./DOMManager";
+import { API_KEY } from "./constants";
+import ForecastFactory from "./ForecastFactory";
 
 const submitButton = document.querySelector(".header__submit-button");
 const searchBar = document.querySelector(".header__search-input");
-const API_KEY = "1eb0eccd4d912649dd185743bd62f924";
 
 async function getCoordinates() {
   const linkLatLon = `http://api.openweathermap.org/geo/1.0/direct?q=${searchBar.value}&limit=5&appid=${API_KEY}`;
   const response = await fetch(linkLatLon);
   const currentLocationData = await response.json();
-  const lattitude = currentLocationData[0]["lat"];
-  const longtitude = currentLocationData[0]["lon"];
+  const latitude = currentLocationData[0]["lat"];
+  const longitude = currentLocationData[0]["lon"];
 
-  return { lattitude, longtitude };
+  return { latitude, longitude };
 }
 
 submitButton.addEventListener("click", async () => {
+  const { latitude, longitude } = await getCoordinates();
+  console.log(latitude);
+  console.log(longitude);
   await currentWeatherFactory.setLocation(searchBar.value);
+  await ForecastFactory.setLocation(latitude, longitude);
   DOMManager.updateScreen();
 });
 

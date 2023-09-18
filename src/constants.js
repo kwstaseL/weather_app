@@ -1,5 +1,7 @@
 const ASSET_PATH = "./public/assets/";
 
+const API_KEY = "1eb0eccd4d912649dd185743bd62f924";
+
 const WEATHER = {
   SUNNY: ASSET_PATH + "sun.png",
   CLOUDY: ASSET_PATH + "cloudy.png",
@@ -7,4 +9,4 @@ const WEATHER = {
   SNOW: ASSET_PATH + "snow.png",
 };
 
-export { WEATHER };
+export { WEATHER, API_KEY };

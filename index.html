@@ -38,6 +38,8 @@
             </div>
           </li>
           <li class="header__entry">
+            <span class="header__clock">15 Sep 2023 15:30</span>
+
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +57,7 @@
       </nav>
     </header>
     <main>
-      <section class="hero container section">
+      <section class="hero">
         <img class="hero__weather-img" src="./public/assets/rainy.png" alt="" />
         <h1 class="hero__weather-location">Amsterdam</h1>
         <h1 class="hero__weather-temp">25°C</h1>
@@ -63,99 +65,150 @@
         <h2 class="hero__weather-hl">H:25°C L:13°C</h2>
       </section>
 
-      <section class="conditions container section">
+      <section class="todays-forecast section">
+        <h1 class="todays-forecast__title section-title">Today's Forecast</h1>
+        <ul class="todays-forecast__list">
+          <li class="todays-forecast__entry">
+            <h1 class="todays-forecast__time">06:00</h1>
+            <img
+              class="todays-forecast__img"
+              src="./public/assets/cloudy.png"
+              alt=""
+            />
+            <h1 class="todays-forecast__temp">26°C</h1>
+          </li>
+          <li class="todays-forecast__entry">
+            <h1 class="todays-forecast__time">09:00</h1>
+            <img
+              class="todays-forecast__img"
+              src="./public/assets/sun.png"
+              alt=""
+            />
+            <h1 class="todays-forecast__temp">22°C</h1>
+          </li>
+          <li class="todays-forecast__entry">
+            <h1 class="todays-forecast__time">12:00</h1>
+            <img
+              class="todays-forecast__img"
+              src="./public/assets/snow.png"
+              alt=""
+            />
+            <h1 class="todays-forecast__temp">12°C</h1>
+          </li>
+          <li class="todays-forecast__entry">
+            <h1 class="todays-forecast__time">16:00</h1>
+            <img
+              class="todays-forecast__img"
+              src="./public/assets/snow.png"
+              alt=""
+            />
+            <h1 class="todays-forecast__temp">11°C</h1>
+          </li>
+          <li class="todays-forecast__entry">
+            <h1 class="todays-forecast__time">21:00</h1>
+            <img
+              class="todays-forecast__img"
+              src="./public/assets/rainy.png"
+              alt=""
+            />
+            <h1 class="todays-forecast__temp">15°C</h1>
+          </li>
+        </ul>
+      </section>
+
+      <section class="conditions section">
         <h1 class="conditions__header section-title">Conditions</h1>
         <br />
         <ul class="conditions__list">
           <li>
             <img
-              class="conditions__image filter-white"
+              class="conditions__image section-img filter-white"
               src="./public/assets/thermometer.png"
               alt=""
             />
             <div>
               <h1 class="conditions__desc">Feels Like</h1>
-              <h1 class="conditions__value conditions__feels-like">30°C</h1>
+              <h1 class="conditions__feels-like section__scale-value">30°C</h1>
             </div>
           </li>
           <li>
             <img
-              class="conditions__image filter-white"
+              class="conditions__image section-img filter-white"
               src="./public/assets/wind.png"
               alt=""
             />
             <div>
               <h1 class="conditions__desc">Wind</h1>
-              <h1 class="conditions__value conditions__wind">0.2 km/h</h1>
+              <h1 class="conditions__wind section__scale-value">0.2 km/h</h1>
             </div>
           </li>
           <li>
             <img
-              class="conditions__image filter-white"
+              class="conditions__image section-img filter-white"
               src="./public/assets/drop.png"
               alt=""
             />
             <div>
-              <h1 class="conditions__desc">Chance of rain</h1>
-              <h1 class="conditions__value conditions__rain">0%</h1>
+              <h1 class="conditions__desc">Humidity</h1>
+              <h1 class="conditions__humidity section__scale-value">0%</h1>
             </div>
           </li>
           <li>
             <img
-              class="conditions__image filter-white"
+              class="conditions__image section-img filter-white"
               src="./public/assets/rays.png"
               alt=""
             />
             <div>
               <h1 class="conditions__desc">UV Index</h1>
-              <h1 class="conditions__value conditions__uv">3</h1>
+              <h1 class="conditions__uv section__scale-value">3</h1>
             </div>
           </li>
         </ul>
       </section>
-      <section class="forecast container section">
+      <section class="forecast section">
         <h1 class="forecast__title section-title">5-day Forecast</h1>
         <ul class="forecast__list">
           <li>
-            <h1 class="forecast__day">Mon</h1>
+            <h1 class="section__scale-value">Mon</h1>
             <img
-              class="forecast__weather-img"
+              class="forecast__weather-img section-img"
               src="./public/assets/rainy.png"
               alt=""
             />
             <div></div>
           </li>
           <li>
-            <h1 class="forecast__day">Tue</h1>
+            <h1 class="section__scale-value">Tue</h1>
             <img
-              class="forecast__weather-img"
+              class="forecast__weather-img section-img"
               src="./public/assets/snow.png"
               alt=""
             />
             <div></div>
           </li>
           <li>
-            <h1 class="forecast__day">Wed</h1>
+            <h1 class="section__scale-value">Wed</h1>
             <img
-              class="forecast__weather-img"
+              class="forecast__weather-img section-img"
               src="./public/assets/snow.png"
               alt=""
             />
             <div></div>
           </li>
           <li>
-            <h1 class="forecast__day">Thu</h1>
+            <h1 class="section__scale-value">Thu</h1>
             <img
-              class="forecast__weather-img"
+              class="forecast__weather-img section-img"
               src="./public/assets/sun.png"
               alt=""
             />
             <div></div>
           </li>
           <li>
-            <h1 class="forecast__day">Fri</h1>
+            <h1 class="section__scale-value">Fri</h1>
             <img
-              class="forecast__weather-img"
+              class="forecast__weather-img section-img"
               src="./public/assets/sun.png"
               alt=""
             />

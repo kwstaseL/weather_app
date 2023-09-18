@@ -1,4 +1,12 @@
 .hero {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 8px;
+  margin-top: 5rem;
+
   max-width: 60ch;
   display: flex;
   flex-direction: column;

@@ -6,7 +6,6 @@ const currentWeatherFactory = (() => {
       `https://api.weatherapi.com/v1/current.json?key=519bc89f260647f197652409233008&q=${location}`
     );
     currentLocationData = await response.json();
-    console.log(currentLocationData);
   }
 
   //   Location Getters
