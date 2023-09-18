@@ -7,6 +7,10 @@
   padding: 0.5rem;
 }
 
+main {
+  padding-bottom: 3rem;
+}
+
 button {
   display: inline-block;
   padding: 0;

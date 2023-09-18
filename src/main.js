@@ -8,10 +8,10 @@ import "../styles/components/forecast.css";
 import "../styles/components/todays_forecast.css";
 import "../styles/common-section-sizes.css";
 import "../styles/grid-design.css";
-import currentWeatherFactory from "./currentWeatherFactory";
-import DOMManager from "./DOMManager";
+import currentWeatherFactory from "./factories/currentWeatherFactory";
+import DOMManager from "./managers/DOMManager";
 import { API_KEY } from "./constants";
-import ForecastFactory from "./ForecastFactory";
+import ForecastFactory from "./factories/ForecastFactory";
 
 const submitButton = document.querySelector(".header__submit-button");
 const searchBar = document.querySelector(".header__search-input");
@@ -28,8 +28,6 @@ async function getCoordinates() {
 
 submitButton.addEventListener("click", async () => {
   const { latitude, longitude } = await getCoordinates();
-  console.log(latitude);
-  console.log(longitude);
   await currentWeatherFactory.setLocation(searchBar.value);
   await ForecastFactory.setLocation(latitude, longitude);
   DOMManager.updateScreen();

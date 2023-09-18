@@ -1,8 +1,12 @@
-import currentWeatherFactory from "./currentWeatherFactory";
-import { WEATHER } from "./constants.js";
+import currentWeatherFactory from "../factories/currentWeatherFactory";
+import { WEATHER } from "../constants.js";
+import ForecastFactory from "../factories/ForecastFactory";
 
 const DOMManager = (() => {
   const CELCIUS_SYMBOL = "°C";
+
+  let forecastData = null;
+
   const header = {
     clock: document.querySelector(".header__clock"),
   };
@@ -19,6 +23,19 @@ const DOMManager = (() => {
     humidity: document.querySelector(".conditions__humidity"),
     uv: document.querySelector(".conditions__uv"),
   };
+
+  const forecast = {
+    hourlyList: document.querySelector(".todays-forecast__list"),
+    dailyList: document.querySelector(".forecast__list"),
+  };
+
+  function updateScreen() {
+    updateHeader();
+    updateHero();
+    updateConditions();
+    forecastData = ForecastFactory.getForecast();
+    updateForecast();
+  }
 
   function handleWeatherIcon(desc) {
     const lowercaseDesc = desc.toLowerCase();
@@ -41,7 +58,7 @@ const DOMManager = (() => {
         break;
       }
     }
-    hero["icon"].src = WEATHER[weatherIcon];
+    return WEATHER[weatherIcon];
   }
 
   function updateHeader() {
@@ -61,7 +78,9 @@ const DOMManager = (() => {
       currentWeatherFactory.getCurrentTemperatureC() + CELCIUS_SYMBOL;
     hero["tempDesc"].textContent =
       currentWeatherFactory.getWeatherDescription();
-    handleWeatherIcon(currentWeatherFactory.getWeatherDescription());
+    hero["icon"].src = handleWeatherIcon(
+      currentWeatherFactory.getWeatherDescription()
+    );
   }
 
   function updateConditions() {
@@ -74,11 +93,16 @@ const DOMManager = (() => {
       currentWeatherFactory.getCurrentHumidity() + "%";
   }
 
-  function updateScreen() {
-    updateHeader();
-    updateHero();
-    updateConditions();
+  function updateForecast() {
+    updateHourlyForecast();
+    updateDailyForecast();
   }
+
+  function updateHourlyForecast() {
+    console.log(forecastData);
+  }
+
+  function updateDailyForecast() {}
 
   return {
     updateScreen,
