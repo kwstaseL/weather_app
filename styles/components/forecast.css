@@ -6,16 +6,20 @@
   display: flex;
   padding: 0.5rem;
   align-items: center;
-  gap: 5rem;
+  gap: 9rem;
   border-bottom: 1px solid var(--clr-underline);
 }
 
 .forecast__day {
-  width: 60px;
+  width: 70px;
 }
 
 .forecast__weather-img {
   height: var(--size-3xl);
+}
+
+.forecast__temp {
+  font-size: var(--size-2xl);
 }
 
 /* sm */
@@ -28,7 +32,10 @@
 /* md */
 @media (min-width: 768px) {
   .forecast__list li {
-    gap: 12em;
+    gap: 10em;
+  }
+  .forecast__temp {
+    font-size: var(--size-3xl);
   }
 }
 

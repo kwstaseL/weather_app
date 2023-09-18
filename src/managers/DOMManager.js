@@ -1,6 +1,8 @@
 import currentWeatherFactory from "../factories/currentWeatherFactory";
-import { WEATHER } from "../constants.js";
+import { WEATHER, DAY_NAMES, convertKelvinToC } from "../constants.js";
 import ForecastFactory from "../factories/ForecastFactory";
+import dailyForecastCreator from "../creators/dailyForecastCreator";
+import hourlyForecastCreator from "../creators/hourlyForecastCreator";
 
 const DOMManager = (() => {
   const CELCIUS_SYMBOL = "°C";
@@ -29,7 +31,13 @@ const DOMManager = (() => {
     dailyList: document.querySelector(".forecast__list"),
   };
 
+  function clearScreen() {
+    forecast["hourlyList"].innerHTML = "";
+    forecast["dailyList"].innerHTML = "";
+  }
+
   function updateScreen() {
+    clearScreen();
     updateHeader();
     updateHero();
     updateConditions();
@@ -99,10 +107,43 @@ const DOMManager = (() => {
   }
 
   function updateHourlyForecast() {
-    console.log(forecastData);
+    const dailyData = forecastData.filter(
+      (weatherData) =>
+        weatherData.date === currentWeatherFactory.getLocalTime().split(" ")[0]
+    );
+    dailyData.forEach((data) => {
+      const hourlyData = data.hourlyWeather;
+      hourlyData.forEach((data) => {
+        const time = data.time.split(":");
+        const hour = time[0] + ":" + time[2];
+        const icon = handleWeatherIcon(data.description);
+        const temp = convertKelvinToC(data.temperature) + CELCIUS_SYMBOL;
+
+        const list_item = hourlyForecastCreator.createTodaysForecastEntry(
+          hour,
+          icon,
+          temp
+        );
+        forecast["hourlyList"].appendChild(list_item);
+      });
+    });
   }
 
-  function updateDailyForecast() {}
+  function updateDailyForecast() {
+    forecastData.forEach((dailyWeatherData) => {
+      console.log(dailyWeatherData);
+      const captureDate = dailyWeatherData.date;
+      const avgTemperature = dailyWeatherData.averageTemperature;
+      const date = new Date(captureDate);
+      const dayIndex = date.getDay();
+      const list_item = dailyForecastCreator.createListItem(
+        DAY_NAMES[dayIndex],
+        handleWeatherIcon(dailyWeatherData.weatherSummary),
+        convertKelvinToC(avgTemperature) + CELCIUS_SYMBOL
+      );
+      forecast["dailyList"].appendChild(list_item);
+    });
+  }
 
   return {
     updateScreen,

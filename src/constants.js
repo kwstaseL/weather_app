@@ -9,4 +9,11 @@ const WEATHER = {
   SNOW: ASSET_PATH + "snow.png",
 };
 
-export { WEATHER, API_KEY };
+function convertKelvinToC(kelvin) {
+  const DIFFERENCE = 273.15;
+  return parseFloat(kelvin - DIFFERENCE).toFixed(1);
+}
+
+const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+export { WEATHER, API_KEY, DAY_NAMES, convertKelvinToC };

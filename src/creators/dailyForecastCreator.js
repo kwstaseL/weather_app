@@ -1,9 +1,9 @@
 const dailyForecastCreator = (() => {
-  function createListItem(day, weatherImageSrc) {
+  function createListItem(day, weatherImageSrc, temperature) {
     const listItem = document.createElement("li");
 
     const h1 = document.createElement("h1");
-    h1.className = "section__scale-value";
+    h1.className = "section__scale-value forecast__day";
     h1.textContent = day;
 
     const img = document.createElement("img");
@@ -11,17 +11,18 @@ const dailyForecastCreator = (() => {
     img.src = weatherImageSrc;
     img.alt = "";
 
-    const div = document.createElement("div");
+    const temp = document.createElement("h1");
+    temp.className = "forecast__temp";
+    temp.textContent = temperature;
 
     listItem.appendChild(h1);
     listItem.appendChild(img);
-    listItem.appendChild(div);
+    listItem.appendChild(temp);
 
-    // Converting the <li> element to an HTML string
-    return listItem.outerHTML;
+    return listItem;
   }
 
-  return createListItem;
+  return { createListItem };
 })();
 
 export default dailyForecastCreator;

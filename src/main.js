@@ -34,5 +34,11 @@ submitButton.addEventListener("click", async () => {
 });
 
 // Default loading
+const linkLatLon = `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=1eb0eccd4d912649dd185743bd62f924`;
+const response = await fetch(linkLatLon);
+const currentLocationData = await response.json();
+const latitude = currentLocationData[0]["lat"];
+const longitude = currentLocationData[0]["lon"];
+await ForecastFactory.setLocation(latitude, longitude);
 await currentWeatherFactory.setLocation("London");
 DOMManager.updateScreen();

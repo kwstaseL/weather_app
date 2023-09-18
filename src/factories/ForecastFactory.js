@@ -9,10 +9,16 @@ const ForecastFactory = (() => {
     if (!forecastDataArray) return;
 
     forecast = [];
+    // Initializing the first day
+    const firstTimeFrame = forecastDataArray[0];
+    const timeFrameCaptured = firstTimeFrame.dt_txt.split(" ");
+    const dateCaptured = timeFrameCaptured[0];
     let day = {
       hourlyWeather: [],
+      date: dateCaptured,
     };
 
+    forecast.push(day);
     forecastDataArray.forEach((timeFrame) => {
       const timeFrameCaptured = timeFrame.dt_txt.split(" ");
       const dateCaptured = timeFrameCaptured[0];
@@ -45,6 +51,13 @@ const ForecastFactory = (() => {
           day.weatherSummary = predominantDescription;
         }
 
+        day.hourlyWeather.push({
+          date: dateCaptured,
+          time: timeCaptured,
+          temperature: timeFrame.main.temp,
+          description: timeFrame.weather[0].description.toLowerCase(),
+        });
+
         // New day begins, creating a new day object
         day = {
           hourlyWeather: [],
@@ -52,6 +65,7 @@ const ForecastFactory = (() => {
         day.date = dateCaptured;
         forecast.push(day);
       }
+
       day.hourlyWeather.push({
         date: dateCaptured,
         time: timeCaptured,
@@ -83,9 +97,6 @@ const ForecastFactory = (() => {
       }
       day.weatherSummary = predominantDescription;
     }
-
-    forecast.push(day);
-    console.log(forecast);
   }
 
   async function setLocation(lat, lon) {

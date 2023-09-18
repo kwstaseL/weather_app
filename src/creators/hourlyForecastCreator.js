@@ -20,11 +20,10 @@ const hourlyForecastCreator = (() => {
     listItem.appendChild(img);
     listItem.appendChild(tempH1);
 
-    // Converting the <li> element to an HTML string
-    return listItem.outerHTML;
+    return listItem;
   }
 
-  return createTodaysForecastEntry;
+  return { createTodaysForecastEntry };
 })();
 
 export default hourlyForecastCreator;
