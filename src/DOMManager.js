@@ -22,12 +22,15 @@ const DOMManager = (() => {
 
     const weatherKeywords = {
       sunny: "SUNNY",
+      clear: "SUNNY",
       cloud: "CLOUDY",
+      overcast: "CLOUDY",
       rain: "RAINY",
       snow: "SNOW",
     };
 
-    let weatherIcon = "DEFAULT_ICON";
+    // Default icon
+    let weatherIcon = "SUNNY";
 
     for (const keyword in weatherKeywords) {
       if (lowercaseDesc.includes(keyword)) {
@@ -35,7 +38,6 @@ const DOMManager = (() => {
         break;
       }
     }
-    console.log(WEATHER[weatherIcon]);
     hero["icon"].src = WEATHER[weatherIcon];
   }
 
@@ -43,11 +45,9 @@ const DOMManager = (() => {
     hero["city"].textContent = currentWeatherFactory.getCity();
     hero["tempC"].textContent =
       currentWeatherFactory.getCurrentTemperatureC() + CELCIUS_SYMBOL;
-    console.log(currentWeatherFactory.getConditions());
-    console.log(currentWeatherFactory.getConditions()["text"]);
     hero["tempDesc"].textContent =
-      currentWeatherFactory.getConditions()["text"];
-    handleWeatherIcon(currentWeatherFactory.getConditions()["text"]);
+      currentWeatherFactory.getWeatherDescription();
+    handleWeatherIcon(currentWeatherFactory.getWeatherDescription());
   }
 
   function updateConditions() {

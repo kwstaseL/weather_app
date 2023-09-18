@@ -48,13 +48,9 @@ const currentWeatherFactory = (() => {
       : null;
   }
 
-  /**
-   * @returns A pair of the condition (ex. Sunny, Stormy etc)
-    and the associated temperature icon corresponding to that condition
-   */
-  function getConditions() {
+  function getWeatherDescription() {
     return currentLocationData != null
-      ? currentLocationData.current.condition
+      ? currentLocationData.current.condition["text"]
       : null;
   }
 
@@ -100,7 +96,7 @@ const currentWeatherFactory = (() => {
     getCity,
     getCurrentCloudiness,
     getCurrentFeelsLikeC,
-    getConditions,
+    getWeatherDescription,
     getCurrentTemperatureC,
     getCurrentWindDirection,
     getCurrentWindKPH,

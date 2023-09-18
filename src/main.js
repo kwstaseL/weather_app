@@ -26,7 +26,9 @@ async function getCoordinates() {
 
 submitButton.addEventListener("click", async () => {
   await currentWeatherFactory.setLocation(searchBar.value);
-  console.log(`Searching for ${searchBar.value}`);
-
   DOMManager.updateScreen();
 });
+
+// Default loading
+await currentWeatherFactory.setLocation("London");
+DOMManager.updateScreen();
