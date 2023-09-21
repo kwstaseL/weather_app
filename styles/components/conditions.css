@@ -1,3 +1,7 @@
+.conditions {
+  font-size: var(--size-xs);
+}
+
 .conditions__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -30,10 +34,6 @@
 
 /* sm */
 @media (min-width: 640px) {
-  .conditions {
-    max-width: 60ch;
-  }
-
   .conditions__header {
     font-size: var(--size-3xl);
   }

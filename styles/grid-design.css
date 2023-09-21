@@ -1,22 +1,24 @@
-@media (min-width: 1580px) {
+@media (min-width: 1280px) {
   main {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
-    gap: 0.5rem;
+    gap: 2rem;
   }
 
   .section {
-    margin-top: 2rem;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    min-width: 69ch;
   }
 
   .forecast {
     grid-column: 2/3;
     grid-row: 1/4;
 
-    max-width: 50ch;
-    margin-right: 8rem;
-    margin-top: 5rem;
+    max-width: 62ch;
+    margin-right: 2rem;
+    margin-top: 4rem;
     padding-bottom: 4.5rem;
   }
 
@@ -29,14 +31,14 @@
 
   .forecast__list li {
     flex: 1;
-    gap: 5rem;
+    gap: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .forecast__weather-img {
-    height: var(--size-5xl);
-    width: var(--size-5xl);
+    height: var(--size-4xl);
+    width: var(--size-4xl);
   }
 }

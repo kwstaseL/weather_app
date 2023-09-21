@@ -22,15 +22,18 @@ button {
 
 .section {
   background-color: var(--clr-grey);
-  width: 100%;
   margin-top: 5rem;
+  border-radius: 8px;
+  max-width: 60ch;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-radius: 8px;
-  max-width: 50ch;
-  padding: 2rem;
 }
 
 .filter-white {
@@ -39,6 +42,7 @@ button {
 }
 /* xs */
 /* If its more than 475 px keep it there */
+
 @media (min-width: 475px) {
   .container {
     max-width: 475px;
@@ -70,16 +74,5 @@ button {
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
-  }
-
-  .section {
-    margin-top: 6rem;
-  }
-}
-
-/* 2xl */
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
   }
 }

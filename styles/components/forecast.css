@@ -1,12 +1,16 @@
+.forecast {
+  font-size: var(--size-xs);
+}
+
 .forecast__list {
-  padding: 2rem;
+  padding: 0.5rem;
 }
 
 .forecast__list li {
   display: flex;
   padding: 0.5rem;
   align-items: center;
-  gap: 9rem;
+  gap: 5rem;
   border-bottom: 1px solid var(--clr-underline);
 }
 
@@ -22,17 +26,24 @@
   font-size: var(--size-2xl);
 }
 
+/* xs */
+@media (min-width: 475px) {
+  .forecast__list li {
+    gap: 7rem;
+  }
+}
+
 /* sm */
 @media (min-width: 640px) {
   .forecast__list li {
-    gap: 7rem;
+    gap: 12rem;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
   .forecast__list li {
-    gap: 10em;
+    gap: 19em;
   }
   .forecast__temp {
     font-size: var(--size-3xl);
@@ -42,11 +53,6 @@
 /* lg */
 @media (min-width: 1024px) {
   .forecast__list li {
-    gap: 17rem;
+    gap: 25rem;
   }
 }
-
-/* xl */
-
-/* 2xl */
-/* @media (min-width: 1536px) {} */
