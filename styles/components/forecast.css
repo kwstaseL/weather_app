@@ -56,3 +56,32 @@
     gap: 25rem;
   }
 }
+/* Grid Design */
+@media (min-width: 1280px) {
+  .forecast {
+    max-width: 62ch;
+    margin-right: 2rem;
+    margin-top: 4rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .forecast__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .forecast__list li {
+    flex: 1;
+    gap: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .forecast__weather-img {
+    height: var(--size-4xl);
+    width: var(--size-4xl);
+  }
+}
