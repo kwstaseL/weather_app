@@ -27,6 +27,10 @@
   .conditions {
     margin-top: 0;
   }
+  .forecast__weather-img {
+    height: var(--size-5xl);
+    width: var(--size-5xl);
+  }
 }
 @media (min-width: 1580px) {
   main {
