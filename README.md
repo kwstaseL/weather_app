@@ -43,4 +43,7 @@ npm run dev
 
 
 ##
+
+The design/layout of the website is inspired by Uizard.
+
 *(*Optional: Use npm run dev -- --host to preview the website and copy the ```Network``` link to preview the website to your mobile phone)*
