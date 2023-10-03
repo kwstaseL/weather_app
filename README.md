@@ -6,6 +6,12 @@ A Simple, fully responsive weather application web-based tool that provides user
 
 It retrieves data from external APIs and displays a 5-day forecast, daily forecast, and current weather conditions. 
 
+### Preview
+<img src="https://github.com/kwstaseL/weather_app/assets/81611844/142c5bbb-276a-4ea8-8d34-ff0476e344b1" alt="Screenshot 2" width="50%"/>
+<img src="https://github.com/kwstaseL/weather_app/assets/81611844/7e925b9c-2935-4bba-a0c0-3c1e0533ee48" alt="Screenshot 1" width="30%"  />
+
+
+
 ### Features
 
 • __5-Day Forecast__: Users can view a detailed 5-day weather forecast, including temperature, humidity, wind speed, and weather conditions for each day. To ensure accuracy and enhance the user experience, data analysis was performed to generate this forecast, as the API data lacked clarity or specificity.
